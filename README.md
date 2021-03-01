@@ -1,31 +1,9 @@
-### Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e
-do Manual da Pessoa Estudante da Trybe.
-
 # Boas vindas ao repositório do projeto de Movie Cards Library Stateful!
-
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
 # Sumário
 
 - [Habilidades](#habilidades)
-- [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de entrega](#data-de-entrega)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
 - [Como desenvolver](#como-desenvolver)
-  - [Componentes](#componentes)
-  - [Estado de componentes](#estado-de-componentes)
-  - [Linter](#linter)
-  - [Testes](#testes)
-    - [Dica: desativando testes](#dica-desativando-testes)
-    - [Dica: watch mode](#dica-watch-mode)
 - [Requisitos do projeto](#requisitos-do-projeto)
     - [1 - Crie um componente chamado `<SearchBar />`](#1---crie-um-componente-chamado-searchbar-)
     - [2 - Renderize um formulário dentro de `<SearchBar />`](#2---renderize-um-formulário-dentro-de-searchbar-)
@@ -47,9 +25,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [18 - Renderize `<MovieList />` dentro de `<MovieLibrary />`](#18---renderize-movielist--dentro-de-movielibrary-)
     - [19 - Renderize `<AddMovie />` dentro de `<MovieLibrary />`](#19---renderize-addmovie-dentro-de-movielibrary-)
     - [20 - Adicione proptypes a todos os componentes](#20---adicione-proptypes-a-todos-os-componentes)
-- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
-- [Revisando um pull request](#revisando-um-pull-request)
-- [Avisos Finais](#avisos-finais)
 
 # Habilidades
 
@@ -61,18 +36,9 @@ Nesse projeto, você será capaz de:
   - Criar formulários utilizando sintaxe JSX com as tags : `input`, `textarea`, `select`, `form`
   - Transmitir informações de componentes filhos para componentes pais via callbacks
 
-# Entregáveis
-
-Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
-
-Lembre-se que você pode consultar nosso conteúdo sobre
-[Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
-
----
-
 ## O que deverá ser desenvolvido
 
-Você deverá desenvolver uma aplicação que consiste em uma biblioteca de cartões de filmes dinâmica utilizando React. A biblioteca é composta por:
+Deverá  ser desenvolvido uma aplicação que consiste em uma biblioteca de cartões de filmes dinâmica utilizando React. A biblioteca é composta por:
 
 * Um cabeçalho;
 
@@ -86,26 +52,16 @@ Uma possível implementação dessa biblioteca consta abaixo.
 
 ![image](preview.gif)
 
-Você precisará implementar componentes que em conjunto resultarão na biblioteca de cartões de filmes dinâmica.
+Será necessário implementar componentes que em conjunto resultarão na biblioteca de cartões de filmes dinâmica.
 
 ## Desenvolvimento
 
 Desenvolva uma aplicação **React** que seja composta por um `conjunto de componentes` React e
 controlada por estados.
 
-## Data de entrega
-
-  - Serão `2` dias de projeto.
-  - Data de entrega para avaliação final do projeto: `04/03/2021 - 14:00h`.
-
-# Instruções para entregar seu projeto
-
 ## Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-09-project-movie-cards-library-stateful.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-09-project-movie-cards-library-stateful`
 
 2. Instale as dependências, inicialize o projeto e rode os testes
   * Instale as dependências:
@@ -115,16 +71,7 @@ controlada por estados.
   * Verifique que os testes estão executando:
     * `npm test` (os testes devem rodar e falhar)
 
-3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-movie-cards-library-stateful`
-
-4. Faça alterações em algum dos componentes que precisam de implementação, por exemplo o `<MovieLibrary />` em `src/components`:
+3. Faça alterações em algum dos componentes que precisam de implementação, por exemplo o `<MovieLibrary />` em `src/components`:
 ```jsx
 import React, { Component } from 'react';
 
@@ -151,49 +98,6 @@ class MovieLibrary extends Component {
 
 export default MovieLibrary;
 ```
-
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listado o arquivo _src/components/MovieLibrary.jsx_ em vermelho)
-  * Adicione o arquivo alterado ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _src/components/MovieLibrary.jsx_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-movie-cards-library-stateful`
-
-7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-09-project-movie-cards-library-stateful/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-09-project-movie-cards-library-stateful/pulls) e confira que o seu _Pull Request_ está criado
-
----
-
-## Durante o desenvolvimento
-
-* ⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
 
 # Como desenvolver
 
@@ -239,20 +143,13 @@ npm run lint
 npm run lint:styles
 ```
 
-⚠️ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.
-ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
-
----
-
 ## Testes
 
 Todos os requisitos do projeto serão testados **automaticamente**. Cada componente possui vários requisitos e os testes para cada requisito de um componente estão no arquivo de teste correspondente.
 
 _**Por exemplo**: Os requisitos relacionados ao componente `<SearchBar />` estão no arquivo `SearchBar.test.js`._
 
-Separe um tempo para ler estes arquivos e entender como os testes estão organizados.
-
-Para executar os testes localmente, digite no terminal o comando `npm test`. Inicialmente, seus testes estarão assim:
+Para executar os testes localmente, digite no terminal o comando `npm test`. Inicialmente, os testes estarão assim:
 
 ![image](failing-tests.png)
 
@@ -319,23 +216,13 @@ Você também pode rodar apenas um arquivo de teste, por exemplo:
 npm test SearchBar.test.js
 ```
 
-⚠️ Lembre-se de não entregar o projeto com nenhum teste ignorado. **Testes ignorados serão tratados como testes falhando**. ⚠️
-
-⚠️ **Não apague, em hipótese alguma, qualquer teste ou arquivo deste repositório**. ⚠️
-
----
-
 ### Dica: watch mode
 
 Ao executar os testes localmente, [Jest](https://jestjs.io/), a ferramenta que executa os testes, entra em _watch mode_. Nesse modo, a cada vez que um arquivo é salvo, os testes são executados novamente. Isso pode aumentar sua produtividade removendo a necessidade de executar os testes manualmente o tempo todo. Você pode abrir uma aba no seu terminal ou no terminal do _VSCode_ e deixar o _Jest_ rodando nesse modo.
 
-⚠️  **Este trabalho contém alguns testes de componente não relacionados diretamente a requisitos! Estude-os e use-os para se orientar durante o desenvolvimento, garantindo que estejam sempre passando** ✅! ⚠️
-
 ---
 
 # Requisitos do projeto
-
-⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando por **todos os _checks_** do **Linter**⚠️
 
 ### 1 - Crie um componente chamado `<SearchBar />`
 
@@ -707,41 +594,3 @@ O estado inicial do componente `<MovieLibrary />` deve ser:
 ### 20 - Adicione proptypes a todos os componentes
 
 Todos os componentes que recebem props devem ter suas proptypes corretamente declaradas. **O ESlint checa automaticamente declaração de PropTypes, portanto seu Pull Request deverá passar pela verificação do linter para satisfazer esse requisito.**
-
----
-
-## Depois de terminar o desenvolvimento
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-09`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-⚠** Lembre-se que garantir que todas as _issues_ comentadas pelo Linter estão resolvidas!** ⚠
-
----
-
-### Revisando um pull request
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
----
-
-# Avisos Finais
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o
-formulário. Leva menos de 3 minutos!
-
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos
-aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não
-se assuste se isso acontecer, ok?
-
----
