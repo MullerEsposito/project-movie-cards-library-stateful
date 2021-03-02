@@ -21,20 +21,32 @@ class MovieLibrary extends Component {
   }
 
   handleOnChange({ target }) {
-    const { movies } = this.props;
+    const { movies: moviesOrigin } = this.props;
+
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
+    this.setState({ movies: moviesOrigin });
 
-    const regex = new RegExp(`.*${value}.*`, 'i');
-    const moviesFiltered = value !== ''
-      ? movies.filter(({ title, subtitle, storyline }) => (
+    if (name === 'bookmarkedOnly') this.setState({ [name]: value });
+    this.setState(({ bookmarkedOnly, movies }) => {
+      if (bookmarkedOnly) {
+        return {
+          movies: movies.filter((movie) => movie.bookmarked),
+          [name]: value,
+        };
+      }
+      return { [name]: value, movies: moviesOrigin };
+    });
+
+    this.setState(({ searchText, movies }) => {
+      const regex = new RegExp(`.*${searchText}.*`, 'i');
+      const moviesFiltered = movies.filter(({ title, subtitle, storyline }) => (
         title.concat(subtitle, storyline).match(regex)
-      ))
-      : movies;
+      ));
 
-    this.setState({
-      [name]: value,
-      movies: moviesFiltered,
+      if (!searchText) return this.setState({ [name]: value });
+
+      return { movies: moviesFiltered, [name]: value };
     });
   }
 
@@ -50,10 +62,10 @@ class MovieLibrary extends Component {
       <div>
         <SearchBar
           searchText={ searchText }
-          checked={ bookmarkedOnly }
+          bookmarkedOnly={ bookmarkedOnly }
           selectedGenre={ selectedGenre }
           onSearchTextChange={ this.handleOnChange }
-          onBookMarkedChange={ this.handleOnChange }
+          onBookmarkedChange={ this.handleOnChange }
           onSelectedGenreChange={ this.handleOnChange }
         />
         <MovieList movies={ movies } />
@@ -71,6 +83,7 @@ MovieLibrary.propTypes = {
       imagePath: PropTypes.string,
       storyline: PropTypes.string,
       rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      bookmarked: PropTypes.bool,
       genre: PropTypes.string,
     }),
   ).isRequired,
