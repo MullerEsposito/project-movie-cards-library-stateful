@@ -146,13 +146,13 @@ class AddMovie extends Component {
   render() {
     return (
       <form data-testid="add-movie-form">
-        { this.renderInputTitle }
-        { this.renderInputSubTitle }
-        { this.renderInputImage }
-        { this.renderInputStoryline }
-        { this.renderInputRating }
-        { this.renderInputGenre }
-        { this.renderSendButton }
+        { this.renderInputTitle() }
+        { this.renderInputSubTitle() }
+        { this.renderInputImage() }
+        { this.renderInputStoryline() }
+        { this.renderInputRating() }
+        { this.renderInputGenre() }
+        { this.renderSendButton() }
       </form>
     );
   }
