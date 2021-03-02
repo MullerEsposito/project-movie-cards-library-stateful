@@ -25,19 +25,23 @@ class MovieLibrary extends Component {
 
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
+
     this.setState({ movies: moviesOrigin });
 
-    if (['bookmarkedOnly', 'selectedGenre'].includes(name)) this.setState({ [name]: value });
+    if (['bookmarkedOnly', 'selectedGenre'].includes(name)) {
+      this.setState({ [name]: value });
+    }
 
     this.setState(({ bookmarkedOnly, movies }) => {
       if (bookmarkedOnly) {
         return { movies: movies.filter((movie) => movie.bookmarked) };
       }
-      return { movies: moviesOrigin };
     });
 
     this.setState(({ selectedGenre, movies }) => {
-      if (selectedGenre) return ({ movies: movies.filter(({ genre }) => selectedGenre === genre) });
+      if (selectedGenre) {
+        return { movies: movies.filter(({ genre }) => selectedGenre === genre) };
+      }
     });
 
     this.setState(({ searchText, movies }) => {
@@ -46,7 +50,7 @@ class MovieLibrary extends Component {
         title.concat(subtitle, storyline).match(regex)
       ));
 
-      if (!searchText) return this.setState({ [name]: value });
+      if (!searchText) return { [name]: value };
 
       return { movies: moviesFiltered, [name]: value };
     });
