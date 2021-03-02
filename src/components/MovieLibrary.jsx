@@ -25,9 +25,14 @@ class MovieLibrary extends Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
 
+    const regexTitle = new RegExp(`.*${value}.*`, 'i');
+    const moviesFiltered = value !== ''
+      ? movies.filter((movie) => movie.title.match(regexTitle))
+      : movies;
+
     this.setState({
       [name]: value,
-      movies,
+      movies: moviesFiltered,
     });
   }
 
