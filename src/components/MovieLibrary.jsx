@@ -27,15 +27,17 @@ class MovieLibrary extends Component {
     const { name } = target;
     this.setState({ movies: moviesOrigin });
 
-    if (name === 'bookmarkedOnly') this.setState({ [name]: value });
+    if (['bookmarkedOnly', 'selectedGenre'].includes(name)) this.setState({ [name]: value });
+
     this.setState(({ bookmarkedOnly, movies }) => {
       if (bookmarkedOnly) {
-        return {
-          movies: movies.filter((movie) => movie.bookmarked),
-          [name]: value,
-        };
+        return { movies: movies.filter((movie) => movie.bookmarked) };
       }
-      return { [name]: value, movies: moviesOrigin };
+      return { movies: moviesOrigin };
+    });
+
+    this.setState(({ selectedGenre, movies }) => {
+      if (selectedGenre) return ({ movies: movies.filter(({ genre }) => selectedGenre === genre) });
     });
 
     this.setState(({ searchText, movies }) => {
